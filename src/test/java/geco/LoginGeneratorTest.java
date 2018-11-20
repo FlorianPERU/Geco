@@ -21,4 +21,15 @@ public class LoginGeneratorTest {
         String login = aLoginGenerator.generateLoginForNomAndPrenom("Durand", "Paul");
         Assert.assertEquals("PDUR", login);
     }
+
+    @Test
+    public void generateLoginForJRAL2() throws Exception{
+        String login1 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
+        String login2 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
+        String login = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
+
+        Assert.assertEquals("JRAL2", login);
+    }
+
+
 }
