@@ -12,7 +12,7 @@ public class LoginGeneratorTest {
 
     @Before
     public void setUp()throws Exception{
-        String[] start = new String[]{"JROL", "BPER", "CGUR", "JDUP", "JARAL", "JARAL1"};
+        String[] start = new String[]{"JROL", "BPER", "CGUR", "JDUP", "JRAL", "JRAL1"};
         aLoginGenerator = new LoginGenerator((new LoginService(start)));
     }
 
@@ -24,12 +24,17 @@ public class LoginGeneratorTest {
 
     @Test
     public void generateLoginForJRAL2() throws Exception{
-        String login1 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
-        String login2 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
+        //String login1 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
+        //String login2 = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
         String login = aLoginGenerator.generateLoginForNomAndPrenom("Ralling", "John");
 
         Assert.assertEquals("JRAL2", login);
     }
 
+    @Test
+    public void loginPDUR2() throws Exception{
+        String login = aLoginGenerator.generateLoginForNomAndPrenom("Durand", "Paul");
+        Assert.assertEquals("PDUR", login);
+    }
 
 }
