@@ -33,8 +33,14 @@ public class LoginGeneratorTest {
 
     @Test
     public void loginPDUR2() throws Exception{
-        String login = aLoginGenerator.generateLoginForNomAndPrenom("Durand", "Paul");
+        String login = aLoginGenerator.generateLoginForNomAndPrenom("Dùrand", "Paul");
         Assert.assertEquals("PDUR", login);
+    }
+
+    @Test
+    public void loginJROLNumber() throws Exception{
+        String login = aLoginGenerator.generateLoginForNomAndPrenom("Rolling", "Jean");
+        Assert.assertEquals("JROL1", login);
     }
 
 }
